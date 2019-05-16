@@ -1,0 +1,12 @@
+�Cuantos ejercicios tiene cada examen? 	
+
+No puede tirar letras, o numeros negativos, ni con coma, ni mas de 100
+
+�Cual es el porcentaje de ejercicios que deben estar correctos para que el alumno apruebe?
+
+No puede tirar letras, ni numeros negativos, y tiene que estar en un rango del 0 al 100; puede ser con coma
+
+�Cuantos ejercicios resolvi� correctamente el alumno?
+
+No puede ingresar numeros negativos, ni numeros mayores al numero de ejrcicios total del examen,
+tampoco numeros con coma
