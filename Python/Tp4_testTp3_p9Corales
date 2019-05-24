@@ -1,7 +1,0 @@
-import Tp3_p9Corales
-import unittest
-
-
-class TestTp3_p9Corales(unittest.TestCase):
-    def test_proceso_notas(self):
-        self.assertEqual()
