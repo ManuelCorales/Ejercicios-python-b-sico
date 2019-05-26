@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "local/bin/python2.7",
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true
+}
