@@ -1,4 +1,11 @@
+import sys
+
+
 def inputs(var):
+    """Se encarga de ejecutar un input cada vez que se la llama
+    siendo ejecutada desde el mismo archivo. En caso de que el
+    programa sea ejecutado por otro archivo, devuelve la misma
+    variable que se le ingresa"""
     if __name__ == "__main__":
         var = input()
         return var
@@ -7,22 +14,22 @@ def inputs(var):
 
 
 def loop_preguntar_palabra(pal):
-
+    """Itera la funcion preguntar_palabra hasta que la
+    palabra introducida sea la valida. Luego ejecuta la función
+    proceso_palabra y por ultimo sale del programa entero"""
     while True:
         pal = preguntar_palabra(pal)
         if pal == "Error":
             continue
         else:
-            cantidadAE = proceso_palabra(pal)
-            cantidadAE = int(cantidadAE[:])
-            if cantidadAE[0] == "0" and cantidadAE[1] == "0":
-                print("La cadena ingresada no tiene letras 'a' ni 'e'")
-            else:
-                print("La cadena tiene " + cantidadAE[0] + " letras 'A' y ",
-                      + cantidadAE[1] + " letras 'E'")
+            proceso_palabra(pal)
+            sys.exit(0)
 
 
 def preguntar_palabra(pal):
+    """Evalúa si la palabra ingresada no contiene números
+    ni esta vacía. En cualquiera de los dos casos devuelve
+    'Error'"""
     print("Ingresa una palabra o letra")
     var = ""
     pal = inputs(var)
@@ -44,10 +51,15 @@ def preguntar_palabra(pal):
                     return "Error"
             except Exception:
                 pass
-        return pal
+    return pal
 
 
 def proceso_palabra(pal):
+    """Evalua cuántas letras 'A' y 'E' tiene la palabra ingresada
+    En caso de tener más 'E' devuelve 'Hay más letras E'.
+    En caso de tener más 'A' devuelve 'Hay más letras A'
+    En caso de que no haya ninguna de las dos letras devuelve
+    'No contiene ninguna de las dos letras'"""
     largo = len(pal)
     a = 0
     e = 0
@@ -60,7 +72,22 @@ def proceso_palabra(pal):
                 e += 1
         except Exception:
             pass
-    return [a, e]
+    cantidadAE = [a, e]
+    cantidadAE[0] = str(cantidadAE[0])
+    cantidadAE[1] = str(cantidadAE[1])
+    if cantidadAE[0] == "0" and cantidadAE[1] == "0":
+        print("La cadena ingresada no tiene letras 'a' ni 'e'")
+        return "No contiene ninguna de las dos letras"
+    else:
+        print("La cadena tiene " + cantidadAE[0] + " letras 'A' y " +
+              cantidadAE[1] + " letras 'E'")
+        if cantidadAE[0] > cantidadAE[1]:
+            print("Por lo tanto, hay más letras A")
+            return "Hay más letras A"
+        else:
+            print("Por lo tanto, hay más letras E")
+            return "Hay más letras E"
+
 
 if __name__ == "__main__":
     loop_preguntar_palabra("")
