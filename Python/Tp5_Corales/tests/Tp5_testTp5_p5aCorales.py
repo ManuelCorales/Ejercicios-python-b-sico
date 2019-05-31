@@ -12,28 +12,28 @@ import unittest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import src.Tp5_p5Corales  # noqa
+import src.Tp5_p5aCorales  # noqa
 
 
-class TestTp5_p5Corales(unittest.TestCase):
+class TestTp5_p5aCorales(unittest.TestCase):
     def test_proceso_palabra(self):
-        self.assertEqual(src.Tp5_p5Corales.proceso_palabra("Heladera Fría"),
+        self.assertEqual(src.Tp5_p5aCorales.proceso_palabra("Heladera Fría"),
                          ("HF"))
-        self.assertEqual(src.Tp5_p5Corales.proceso_palabra("Fede aprobame"),
+        self.assertEqual(src.Tp5_p5aCorales.proceso_palabra("Fede aprobame"),
                          ("FA"))
-        self.assertEqual(src.Tp5_p5Corales.proceso_palabra
+        self.assertEqual(src.Tp5_p5aCorales.proceso_palabra
                          ("Ciudad Autonoma Buenos Aires"), ("CABA"))
 
     def test_preguntar_palabra(self):
         """Llama a la funcion preguntar_palabra con cada palabra y devuelve
         si pasa los filtros de la cadena ingresada"""
-        self.assertEqual(src.Tp5_p5Corales.preguntar_palabra("Ojo123"),
+        self.assertEqual(src.Tp5_p5aCorales.preguntar_palabra("Ojo123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5Corales.preguntar_palabra("123"),
+        self.assertEqual(src.Tp5_p5aCorales.preguntar_palabra("123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5Corales.preguntar_palabra("Aaa 123"),
+        self.assertEqual(src.Tp5_p5aCorales.preguntar_palabra("Aaa 123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5Corales.preguntar_palabra
+        self.assertEqual(src.Tp5_p5aCorales.preguntar_palabra
                          ("Aeroplano volador"), ("Aeroplano volador"))
 
 
