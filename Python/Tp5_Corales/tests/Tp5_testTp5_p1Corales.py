@@ -1,3 +1,12 @@
+# No es necesario testear la función loop_preguntar_palabra debido a que
+# no devuleve nada y lo unico que hace es iterar otra función hasta que se dé
+# una condición
+
+# Tampoco es necesario testear la función inputs debido a que lo unico de
+# lo que se encarga es realizar inputs cada vez que se la llama desde el
+# mismo archivo y devuelve ese valor de input. En caso de ser ejecutada
+# desde algun archivo externo, devuelve absolutamente lo mismo que se le
+# ingresa
 import unittest
 import sys
 import os

@@ -31,7 +31,6 @@ def preguntar_palabra(pal):
     ni esta vacía. En cualquiera de los dos casos devuelve
     'Error'"""
     print("Ingresa una palabra o letra")
-    var = ""
     pal = inputs(pal)
     try:
         if pal == "":
@@ -68,8 +67,7 @@ def proceso_palabra(pal):
         try:
             if letra.lower() == "a":
                 a += 1
-            elif letra.lower() == "e": 
-
+            elif letra.lower() == "e":
                 e += 1
         except Exception:
             pass
