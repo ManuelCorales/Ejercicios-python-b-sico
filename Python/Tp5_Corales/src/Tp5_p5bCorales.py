@@ -54,14 +54,13 @@ def preguntar_palabra(pal):
 
 
 def proceso_palabra(pal):
-    """Evalúa cual es la primera letra de cada palabra del parametro 'pal'
-    las hace mayusculas, las junta y las devuelve como 'primeraletra'"""
-    primerletra = pal[0: 1].upper()
+    pal = list(pal)
+    pal[0] = pal[0].upper()
     for i in range(len(pal)):
-        caracter = pal[i: i+1]
+        caracter = pal[i]
         if caracter == " ":
-            primerletra += pal[i+1: i+2].upper()
-    print(primerletra)
-    return(primerletra)
+            pal[i+1] = pal[i+1].upper()
+    print("La cadena quedaría: " + "".join(pal))
+    return("".join(pal))
 if __name__ == "__main__":
     loop_preguntar_palabra("")

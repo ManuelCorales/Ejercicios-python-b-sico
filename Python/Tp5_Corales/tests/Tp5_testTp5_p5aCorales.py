@@ -17,6 +17,8 @@ import src.Tp5_p5aCorales  # noqa
 
 class TestTp5_p5aCorales(unittest.TestCase):
     def test_proceso_palabra(self):
+        """Testea cada una de las palabras ingresadas comprobando que devuelva
+        la primera letra de cada palabra"""
         self.assertEqual(src.Tp5_p5aCorales.proceso_palabra("Heladera Fría"),
                          ("HF"))
         self.assertEqual(src.Tp5_p5aCorales.proceso_palabra("Fede aprobame"),
