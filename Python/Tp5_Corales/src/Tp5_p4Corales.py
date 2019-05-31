@@ -13,6 +13,8 @@ def inputs(var):
     else:
         return var
 
+import sys
+
 
 def loop_preguntar_palabra(pal):
     """Itera la función preguntar_palabra hasta
