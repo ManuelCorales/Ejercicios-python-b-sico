@@ -59,7 +59,6 @@ def proceso_palabra(pal):
         caracter = pal[i: i+1]
         if caracter == " ":
             primerletra += pal[i+1: i+2].upper()
-
     print(primerletra)
     return(primerletra)
 if __name__ == "__main__":
