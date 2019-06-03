@@ -33,8 +33,8 @@ def preguntar_palabra(pal):
     print("Ingresa una palabra o letra")
     pal = inputs(pal)
     try:
-        if pal == "":
-            print("No se pueden introducir nada")
+        if pal.strip() == "":
+            print("No se pueden introducir solo espacios o nada")
             return "Error"
         pal = int(pal)
         print("No se pueden introducir solo números")

@@ -50,17 +50,34 @@ def preguntar_palabra(pal):
                     return "Error"
             except Exception:
                 pass
-    return pal
+    return pal.strip()
 
 
 def proceso_palabra(pal):
+    """Recibe el parametro 'pal' y cambia cada una de las letras que estan en
+    las palabras que no comienzan con la letra 'a' tanto en minuscula como
+    mayuscula. Devuelve una cadena solo con las palabras que empiezan con 'a'
+    """
+    # Cuando rango_palabra se iguala a True indica que se encontró una palabra
+    # que empieza con una letra diferente a la "a" evaluando si el caracter es
+    # un espacio y si su siguiente es una letra que no cumple con la regla.
+    # Después de eso cuando se reconoce un nuevo espacio, se fija rango_palabra
+    # a False, indicando que termino la palabra
+    #
     pal = list(pal)
-    pal[0] = pal[0].upper()
+    rango_palabra = False
+    if pal[0].lower() != "a":
+        rango_palabra = True
     for i in range(len(pal)):
-        caracter = pal[i]
-        if caracter == " ":
-            pal[i+1] = pal[i+1].upper()
-    print("La cadena quedaría: " + "".join(pal))
-    return("".join(pal))
+        if pal[i] == " " and pal[i+1].lower() != "a":
+            rango_palabra = True
+        else:
+            if pal[i] == " ":
+                rango_palabra = False
+        if rango_palabra is True:
+            pal[i] = ""
+    pal = ("".join(pal)).strip()
+    print("La cadena quedaría: " + pal)
+    return pal
 if __name__ == "__main__":
     loop_preguntar_palabra("")

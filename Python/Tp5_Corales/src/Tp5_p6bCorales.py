@@ -50,17 +50,22 @@ def preguntar_palabra(pal):
                     return "Error"
             except Exception:
                 pass
-    return pal
+    return pal.strip()
 
 
 def proceso_palabra(pal):
+    """Recibe el parametro 'pal' y saca cada una de las consonantes
+    de las palabras tanto en minúscula como mayúscula. Devuelve una
+    cadena solo con las vocales de las palabras
+    """
     pal = list(pal)
-    pal[0] = pal[0].upper()
     for i in range(len(pal)):
-        caracter = pal[i]
-        if caracter == " ":
-            pal[i+1] = pal[i+1].upper()
-    print("La cadena quedaría: " + "".join(pal))
-    return("".join(pal))
+        if pal[i].lower() != "a" and pal[i].lower() != "e" and \
+           pal[i].lower() != "i" and pal[i].lower() != "o" and \
+           pal[i].lower() != "u" and pal[i] != " ":
+            pal[i] = ""
+    pal = "".join(pal)
+    print("La cadena quedaría: " + pal)
+    return pal
 if __name__ == "__main__":
     loop_preguntar_palabra("")

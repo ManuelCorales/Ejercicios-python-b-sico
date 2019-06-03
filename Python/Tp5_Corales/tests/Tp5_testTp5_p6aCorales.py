@@ -12,34 +12,34 @@ import unittest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import src.Tp5_p5bCorales  # noqa
+import src.Tp5_p6aCorales  # noqa
 
 
-class TestTp5_p5bCorales(unittest.TestCase):
+class TestTp5_p6aCorales(unittest.TestCase):
     def test_proceso_palabra(self):
         """Testea cada una de las palabras ingresadas comprobando que devuelva
-        las palabras pero con la primera letra de cada una en mayuscula"""
-        self.assertEqual(src.Tp5_p5bCorales.proceso_palabra("heladera fría"),
-                         ("Heladera Fría"))
-        self.assertEqual(src.Tp5_p5bCorales.proceso_palabra("fede aprobame"),
-                         ("Fede Aprobame"))
-        self.assertEqual(src.Tp5_p5bCorales.proceso_palabra
-                         ("Ciudad autonoma Buenos aires"),
-                         ("Ciudad Autonoma Buenos Aires"))
+        las palabras sin las vocales"""
+        self.assertEqual(src.Tp5_p6aCorales.proceso_palabra("Antes de ayer"),
+                         ("nts d yr"))
+        self.assertEqual(src.Tp5_p6aCorales.proceso_palabra("fede aprobame"),
+                         ("fd prbm"))
+        self.assertEqual(src.Tp5_p6aCorales.proceso_palabra
+                         ("Ciudad Autonoma de Buenos Aires"),
+                         ("Cdd tnm d Bns rs"))
 
     def test_preguntar_palabra(self):
         """Llama a la funcion preguntar_palabra con cada palabra y devuelve
         si pasa los filtros de la cadena ingresada"""
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra("Ojo123"),
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra("Ojo123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra("123"),
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra("123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra("Aaa 123"),
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra("Aaa 123"),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra
                          ("aeroplano volador"), ("aeroplano volador"))
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra("   "),
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra("   "),
                          ("Error"))
-        self.assertEqual(src.Tp5_p5bCorales.preguntar_palabra
+        self.assertEqual(src.Tp5_p6aCorales.preguntar_palabra
                          ("aeroplano volador"), ("aeroplano volador"))
 unittest.main()

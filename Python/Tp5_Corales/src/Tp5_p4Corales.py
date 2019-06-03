@@ -40,8 +40,8 @@ def preguntar_palabra(pal):
             print("Ingrese la misma palabra, pero en mayuscula")
             pal[i] = inputs(pal[i])
         try:
-            if pal[i] == "":
-                print("No se puede introducir nada")
+            if pal[i].strip() == "":
+                print("No se puede introducir solo espacios o nada")
                 return ["Error", ""]
             pal[i] = int(pal[i])
             print("No se puede introducir solo números")
