@@ -11,6 +11,8 @@
 # Diccionario: nombres_telefonos = {"carlos": "1165329856",
 #                                   "ruben": "1123654875"
 #                                   "jorge": "1156236235"}
+
+# Los teléfonos deben ser de 10 cifras
 import unittest
 import sys
 import os
@@ -30,6 +32,8 @@ class TestTp5_p7aCorales(unittest.TestCase):
                          ("Volver a preguntar nombre"))
 
     def test_editar_telefono(self):
+        """Testea en qué casos devuelve error si se mete cualquier
+        otra cosa que no sea un número y tenga 10 cifras"""
         self.assertEqual(src.Tp5_p7aCorales.editar_telefono
                          ("Carlos", "1156982059"),
                          ("1156982059"))
@@ -41,6 +45,12 @@ class TestTp5_p7aCorales(unittest.TestCase):
                          ("Error"))
         self.assertEqual(src.Tp5_p7aCorales.editar_telefono
                          ("Carlos", ""),
+                         ("Error"))
+        self.assertEqual(src.Tp5_p7aCorales.editar_telefono
+                         ("Carlos", "115698205965465135"),
+                         ("Error"))
+        self.assertEqual(src.Tp5_p7aCorales.editar_telefono
+                         ("Maxi", "11059"),
                          ("Error"))
 
     def test_proceso_nombre(self):

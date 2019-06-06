@@ -1,3 +1,6 @@
+# Los teléfonos deben ser de 10 cifras
+
+
 def loop_preguntar_nombre():
     """Esta función es la encargada de ejecutar todas las demás
     No recibe ni devuelve ningun parametro, por lo tanto no es
@@ -58,7 +61,10 @@ def editar_telefono(nombre, telefono_editado):
     try:
         telefono_editado = int(telefono_editado)
         telefono_editado = str(telefono_editado)
-        return telefono_editado
+        if len(telefono_editado) == 10:
+            return telefono_editado
+        else:
+            return "Error"
     except Exception:
         print("Solo se pueden ingresar números")
         return "Error"
